@@ -14,7 +14,7 @@ namespace WpfApp1.Models
         {
             get =>
                 DB.GetComputerManager().
-                    SelectComputerByID(ComputerID);
+                    SelectComputerByID(IdComputer);
         }
     }
 }

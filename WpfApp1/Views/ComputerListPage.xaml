@@ -21,6 +21,7 @@
             <TextBox MinWidth="200" MaxWidth="500" 
                      Text="{Binding SearchText}" />
             <Button Content="Искать!" Command="{Binding Search}"/>
+            <Button Content="Отправить в ремонт" Margin="350 0 0 0" Command="{Binding GetToService}"/>
         </StackPanel>
         <ListView Grid.Row="1" ItemsSource="{Binding Computers}"
                   SelectedItem="{Binding SelectedComputer}">

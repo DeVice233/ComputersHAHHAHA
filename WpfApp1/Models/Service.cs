@@ -18,7 +18,7 @@ namespace WpfApp1.Models
         public string Problem { get; set; }
         [TableColumn("status")]
         public string Status { get; set; }
-        [TableColumn("computerid")]
-        public int ComputerID { get; set; }
+        //[TableColumn("computerid")]
+        //public int ComputerID { get; set; }
     }
 }

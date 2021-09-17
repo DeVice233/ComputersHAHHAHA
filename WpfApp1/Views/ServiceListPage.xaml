@@ -16,19 +16,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition />
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ListView ItemsSource="{Binding Services}" SelectedItem="{Binding SelectedService}">
+        <ListView ItemsSource="{Binding Services}" SelectedItem="{Binding SelectedService}" Height="400">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Дата поломки"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding DateService}"/>
-                    <GridViewColumn Header="Поломанный компьютер"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Computer.ID}"/>
-                    <GridViewColumn Header="Причина поломки"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Problem}"/>
-                    <GridViewColumn Header="Статус"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Status}"/>
+                    <GridViewColumn Header="Дата поломки" DisplayMemberBinding="{Binding DateService}"/>
+                    <GridViewColumn Header="Поломанный компьютер" DisplayMemberBinding="{Binding Computer.ID}"/>
+                    <GridViewColumn Header="Причина поломки" DisplayMemberBinding="{Binding Problem}"/>
+                    <GridViewColumn Header="Статус"  DisplayMemberBinding="{Binding Status}"/>
                 </GridView>
             </ListView.View>
             <ListView.ContextMenu>

@@ -1,0 +1,35 @@
+﻿<Page x:Class="WpfApp1.Views.EditServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      xmlns:local="clr-namespace:WpfApp1.Views"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditServicePage">
+
+    <StackPanel Margin="5 5 0 0" >
+        <TextBlock Text="Выбранный компьютер"/>
+        <TextBox Text="{Binding SelectedComputer.DomainName}" IsEnabled="False" Width="100" HorizontalAlignment="Left"/>
+        <TextBlock Text="Введите дату"/>
+        <DatePicker Width="200" Margin="0 10 0 0" SelectedDate="{Binding SelectedService.DateService}"
+        HorizontalAlignment="Left"   IsTodayHighlighted="True"/>
+        <TextBlock Text="Проблема с компьютером"  Margin="0 10 0 0"/>
+        <TextBox Text="{Binding SelectedService.Problem}"/>
+        <TextBlock Text="Статус компьютера"/>
+        <ComboBox SelectedItem="{Binding SelectedService.Status}" Width="200" HorizontalAlignment="Left">
+            <ComboBox.ItemsSource>
+                <x:Array Type="sys:String">
+                    <sys:String>В ремонте</sys:String>
+                    <sys:String>Исправен</sys:String>
+                </x:Array>
+            </ComboBox.ItemsSource>
+        </ComboBox>
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 250 50 0"> 
+            <Button Content="Сохранить" Command="{Binding Save}"/>
+        </StackPanel>
+    </StackPanel>
+   
+</Page>

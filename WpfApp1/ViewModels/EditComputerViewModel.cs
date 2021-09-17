@@ -23,7 +23,7 @@ namespace WpfApp1.ViewModels
         {
             Groups = DB.GetGroupManager().GetAllGroups();
             Services = DB.GetServiceManager().GetAllServices();
-            SelectedService = new Service();
+            
             SelectedComputer = new Computer();
 
             InitSave();

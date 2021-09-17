@@ -18,7 +18,7 @@ namespace WpfApp1.ViewModels
         public CommandBinding Search { get; set; }
         public CommandBinding Edit { get; set; }
         public CommandBinding Delete { get; set; }
-
+        public CommandBinding GetToService { get; set; }
         public ComputerListViewModel()
         {
             Edit = new CommandBinding(()=>
@@ -39,6 +39,14 @@ namespace WpfApp1.ViewModels
                     Search(SearchText).Select(g => g.ID);
                 Computers = DB.GetComputerManager().Search(SearchText, groupsId );
                 SignalChanged("Computers");
+            });
+
+            GetToService = new CommandBinding(() =>
+            {
+                if (SelectedComputer != null)
+                {
+                    Pager.ChangePageTo(new EditServicePage(SelectedComputer));
+                }
             });
         }
     }
